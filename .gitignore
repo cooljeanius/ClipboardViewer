@@ -1,1 +1,17 @@
 *DS_Store*
+*.pbxuser
+*.perspectivev3
+*.pbxbtree
+*.pbxsymbols
+*.hmap
+*.dep
+*.o
+*.LinkFileList
+*.dat
+*.app
+*.dSYM
+*.pbxstrings
+*.pbxindex
+*.log
+*.build
+build/*

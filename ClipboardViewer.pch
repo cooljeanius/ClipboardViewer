@@ -1,0 +1,8 @@
+/*
+ * Prefix header for all source files of the 'Clipboard Viewer' target in
+ * the 'ClipboardViewer' project.
+ */
+
+#import <AppKit/AppKit.h>
+
+/* EOF */

@@ -18,6 +18,15 @@
 		177AF0B50DEE1F32003C3A84 /* LazyDataTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 922E7C4C020F000400CA0CA4 /* LazyDataTextStorage.m */; };
 		17FC1C6E0DEF1A9900F4FF67 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17FC1C6C0DEF1A9900F4FF67 /* Localizable.strings */; };
 		41B8D3B10EE8BA9E00B27E3C /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 41B8D3B00EE8BA9E00B27E3C /* AppIcon.icns */; };
+		A545883218E1D99600FBCD8F /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9270748502223BD700000103 /* README.rtf */; };
+		A545884618E1DAB900FBCD8F /* PasteboardController.h in Headers */ = {isa = PBXBuildFile; fileRef = 177AEE080DEDDAC3003C3A84 /* PasteboardController.h */; };
+		A545884718E1DAB900FBCD8F /* LazyDataTextStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 922E7C4B020F000400CA0CA4 /* LazyDataTextStorage.h */; };
+		A545884818E1DAB900FBCD8F /* ASCIIString.h in Headers */ = {isa = PBXBuildFile; fileRef = 177AEEF00DEE00F8003C3A84 /* ASCIIString.h */; };
+		A545884918E1DAB900FBCD8F /* HexString.h in Headers */ = {isa = PBXBuildFile; fileRef = 177AEF990DEE0CEC003C3A84 /* HexString.h */; };
+		A545884A18E1DAB900FBCD8F /* HexAndASCIIString.h in Headers */ = {isa = PBXBuildFile; fileRef = 177AF0100DEE1493003C3A84 /* HexAndASCIIString.h */; };
+		A545884B18E1DAB900FBCD8F /* PasteboardTypeTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 177AEE870DEDFB29003C3A84 /* PasteboardTypeTransformer.h */; };
+		A54588D418E1DB0D00FBCD8F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
+		A54588D518E1DB1400FBCD8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +53,7 @@
 		922E7C4B020F000400CA0CA4 /* LazyDataTextStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyDataTextStorage.h; sourceTree = "<group>"; };
 		922E7C4C020F000400CA0CA4 /* LazyDataTextStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyDataTextStorage.m; sourceTree = "<group>"; };
 		9270748502223BD700000103 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		A54588D618E1DB6D00FBCD8F /* ClipboardViewer.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClipboardViewer.pch; path = Examples/ClipboardViewer/ClipboardViewer.pch; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54588D418E1DB0D00FBCD8F /* AppKit.framework in Frameworks */,
+				A54588D518E1DB1400FBCD8F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +130,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A54588D618E1DB6D00FBCD8F /* ClipboardViewer.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -145,11 +158,28 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A54588D318E1DAD100FBCD8F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A545884618E1DAB900FBCD8F /* PasteboardController.h in Headers */,
+				A545884718E1DAB900FBCD8F /* LazyDataTextStorage.h in Headers */,
+				A545884818E1DAB900FBCD8F /* ASCIIString.h in Headers */,
+				A545884918E1DAB900FBCD8F /* HexString.h in Headers */,
+				A545884A18E1DAB900FBCD8F /* HexAndASCIIString.h in Headers */,
+				A545884B18E1DAB900FBCD8F /* PasteboardTypeTransformer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		177AEDAF0DEDCEB7003C3A84 /* Clipboard Viewer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 177AEDB60DEDCEB7003C3A84 /* Build configuration list for PBXNativeTarget "Clipboard Viewer" */;
 			buildPhases = (
+				A54588D318E1DAD100FBCD8F /* Headers */,
 				177AEDAC0DEDCEB7003C3A84 /* Resources */,
 				177AEDAD0DEDCEB7003C3A84 /* Sources */,
 				177AEDAE0DEDCEB7003C3A84 /* Frameworks */,
@@ -196,6 +226,7 @@
 				177AF09D0DEE1D80003C3A84 /* InfoPlist.strings in Resources */,
 				17FC1C6E0DEF1A9900F4FF67 /* Localizable.strings in Resources */,
 				41B8D3B10EE8BA9E00B27E3C /* AppIcon.icns in Resources */,
+				A545883218E1D99600FBCD8F /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,9 +287,9 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREFIX_HEADER = ClipboardViewer.pch;
 				INFOPLIST_FILE = "Info-Clipboard_Viewer.plist";
-				INSTALL_PATH = /DevTools/Utilities;
+				INSTALL_PATH = /Developer/Applications/Utilities/;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -295,16 +326,72 @@
 		B69BDCEA08A2DDF2008AC9B5 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DEBUGGING_SYMBOLS = full;
+				GCC_ENABLE_EXCEPTIONS = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ClipboardViewer.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_GLOBAL_CONSTRUCTORS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PKGINFO_FILE = YES;
+				LD_GENERATE_MAP_FILE = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wimplicit",
+					"-Wno-unused",
+				);
 			};
 			name = Development;
 		};
 		B69BDCEB08A2DDF2008AC9B5 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ALTIVEC_EXTENSIONS = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ClipboardViewer.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GENERATE_PKGINFO_FILE = YES;
+				LD_GENERATE_MAP_FILE = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SEPARATE_STRIP = YES;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Deployment;
 		};
