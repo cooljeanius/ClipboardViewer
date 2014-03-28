@@ -72,7 +72,7 @@
  * everything goes smoothly.
  */
 - (void)applicationDidFinishLaunching:(NSNotification *)note {
-    /* Set up our own data storage */
+    /* Set up our own data storage: */
     NSDictionary *plainTextAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:
                                          [NSFont userFixedPitchFontOfSize:(CGFloat)10.0],
 										 NSFontAttributeName,
@@ -84,7 +84,7 @@
     [[dataView layoutManager] replaceTextStorage:lazyStorage];
     [lazyStorage release];
 
-    /* Set up our two text containers, one for fixed width and one normal */
+    /* Set up our two text containers: 1 for fixed width, and 1 normal: */
     sizableContainer = [[dataView textContainer] retain];
     fixedWidthContainer = [[NSTextContainer alloc] initWithContainerSize:NSMakeSize((CGFloat)1.0e7,
 																					(CGFloat)1.0e7)];
@@ -92,7 +92,7 @@
     [fixedWidthContainer setHeightTracksTextView:(BOOL)NO];
     [fixedWidthContainer setLineFragmentPadding:(CGFloat)[sizableContainer lineFragmentPadding]];
 
-    /* Load initial data */
+    /* Load initial data: */
     self.whichPboard = [NSPasteboard generalPasteboard];
     displayMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"displayMode"];
     [self reload:nil];
