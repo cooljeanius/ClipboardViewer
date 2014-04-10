@@ -9,94 +9,103 @@
 \fs28 \cf0 \
 \pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\ql\qnatural
 
-\b0\fs24 \cf0 This small application shows the contents of any clipboard.\
-A combo box lets you choose the clipboard to be examined (either from the built-in list, or by entering the name of an arbitrary clipboard);\
-the list of types on the selected clipboard are displayed in a table view; and clicking on a type in the table view shows the data for that type in a text view.\
+\b0\fs24 \cf0 This small application shows the contents of any clipboard. \
+A combo box lets you choose the clipboard to be examined \
+(either from the built-in list, or by entering the name of an arbitrary clipboard); \
+the list of types on the selected clipboard are displayed in a table view; \
+and clicking on a type in the table view shows the data for that type in a text view. \
 \
-The app has six custom classes:\
+The app has six custom classes: \
 \
 \pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\ql\qnatural
 
 \f1\fs28 \cf0 PasteboardController
 \f0\fs24 \
-The central controller object driving the UI and getting data from the clipboard. This class shows:\
-- Interacting with the clipboard (getting types list; getting data for a given type; checking to see if pasteboard was changed between accesses).\
+The central controller object driving the UI and getting data from the clipboard. \
+This class shows: \
+- Interacting with the clipboard (getting types list; getting data for a given type; checking to see if pasteboard was changed between accesses). \
 - Interacting with the simple UI of the app, including an
-\f1\fs20 NSComboBox
-\f0\fs24 .\
-- Use of simple properties.\
-- User interface validation.\
-- Presenting errors.\
+\f1\fs20  NSComboBox
+\f0\fs24 . \
+- Use of simple properties. \
+- User interface validation. \
+- Presenting errors. \
 - Using
-\f1\fs20 NSSavePanel
-\f0\fs24  as a sheet.\
+\f1\fs20  NSSavePanel
+\f0\fs24  as a sheet. \
 \
 
 \f1\fs28 LazyDataTextStorage
 \f0\fs24 \
 Subclass of
-\f1\fs20 NSTextStorage
+\f1\fs20  NSTextStorage
 \f0\fs24 , used as the backing store for the
-\f1\fs20 NSTextView
-\f0\fs24  which displays the contents.\
+\f1\fs20  NSTextView
+\f0\fs24  which displays the contents. \
 Upon loading the nib, the
-\f1\fs20 NSTextStorage
+\f1\fs20  NSTextStorage
 \f0\fs24  for this view is replaced with an instance of
-\f1\fs20 LazyDataTextStorage
-\f0\fs24 .\
+\f1\fs20  LazyDataTextStorage
+\f0\fs24 . \
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\ql\qnatural
 
-\f1\fs20 LazyDataTextStorage
-\f0\fs24  uses a string and an attributes dictionary for its backing store:\
+\f1\fs20 \cf0 LazyDataTextStorage
+\f0\fs24  uses a string and an attributes dictionary for its backing store: \
 the string is retained,
-\b not
+\b  not
 \b0  copied, allowing the three lazily-evaluated
-\f1\fs20 NSString
-\f0
-\fs24 subclasses (below) to actually behave lazily.\
+\f1\fs20  NSString
+\f0\fs24  subclasses (below) to actually behave lazily. \
 Note that
-\f1\fs20 LazyDataTextStorage
+\f1\fs20  LazyDataTextStorage
 \f0\fs24  is
-\b not
+\b  not
 \b0  editable, and thus it overrides the editing methods of
-\f1\fs20 NSTextStorage
-\f0\fs24  to do nothing.\
+\f1\fs20  NSTextStorage
+\f0\fs24  to do nothing. \
 \
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\ql\qnatural
 
-\f1\fs28 ASCIIString
+\f1\fs28 \cf0 ASCIIString
 \f0\b ,
-\f1\b0 HexString
+\f1\b0  HexString
 \f0\b , and
-\f1\b0 HexAndASCIIString
+\f1\b0  HexAndASCIIString
 \f0\b\fs24 \
 \pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\ql\qnatural
 
 \b0 \cf0 Three
-\f1\fs20 NSString
-\f0\fs24  subclasses for the three ways clipboard data is displayed in the application.\
-These classes are ordered by complexity:\
+\f1\fs20  NSString
+\f0\fs24  subclasses for the three ways clipboard data is displayed in the application. \
+These classes are ordered by complexity: \
 \pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\ql\qnatural
 
 \f1\fs20 \cf0 ASCIIString
 \f0\fs24  is a very simple example of an
-\f1\fs20 NSString
+\f1\fs20  NSString
 \f0\fs24  subclass, as is
-\f1\fs20 HexString
+\f1\fs20  HexString
 \f0\fs24 .\
 Meanwhile,
-\f1\fs20 HexAndASCIIString
+\f1\fs20  HexAndASCIIString
 \f0\fs24  uses a more complicated implementation of its
-\f1\fs20 \CocoaLigature0 getCharacters:range:
-\f0\fs24 \CocoaLigature1  method to interpret 10-byte sequences as lines and only process the lines that are needed.\
+\f1\fs20 \CocoaLigature0  getCharacters:range:
+\f0\fs24 \CocoaLigature1  method to interpret 10-byte sequences as lines and \
+only process the lines that are needed. \
 \
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\ql\qnatural
 
-\f1\fs28 PasteboardTypeTransformer
+\f1\fs28 \cf0 PasteboardTypeTransformer
 \f0\fs24 \
 A subclass of
-\f1\fs20 NSValueTransformer
-\f0\fs24 .\
-This class converts pasteboard types based on four-character codes (like the old HFS type and creator codes) to be a bit more human-readable.\
-It also interprets the four bytes as native characters and puts them at the beginning of the pasteboard type's string.\
-Other pasteboard types are just passed through.\
-Although the conversion looks sticky, this is a reasonably good example of creating one's own value transformer.\
+\f1\fs20  NSValueTransformer
+\f0\fs24 . \
+This class converts pasteboard types based on four-character codes \
+(like the old HFS type and creator codes) to be a bit more human-readable. \
+It also interprets the four bytes as native characters and puts them at the \
+beginning of the pasteboard type's string. \
+Other pasteboard types are just passed through. \
+Although the conversion looks sticky, this is a reasonably good example of \
+creating one's own value transformer. \
 \
 }
