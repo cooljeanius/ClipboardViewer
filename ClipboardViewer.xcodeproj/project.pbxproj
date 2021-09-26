@@ -50,6 +50,8 @@
 		922E7C4B020F000400CA0CA4 /* LazyDataTextStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyDataTextStorage.h; sourceTree = "<group>"; };
 		922E7C4C020F000400CA0CA4 /* LazyDataTextStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyDataTextStorage.m; sourceTree = "<group>"; };
 		9270748502223BD700000103 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		A52B64392700A2120003F849 /* README.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = README.html; sourceTree = "<group>"; };
+		A52B643B2700A23E0003F849 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		A54588D618E1DB6D00FBCD8F /* ClipboardViewer.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClipboardViewer.pch; path = Examples/ClipboardViewer/ClipboardViewer.pch; sourceTree = DEVELOPER_DIR; };
 		A5E81BF724AEE5BA00BE3B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A5E81BF824AEE5C200BE3B16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -117,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				9270748502223BD700000103 /* README.rtf */,
+				A52B643B2700A23E0003F849 /* README.txt */,
+				A52B64392700A2120003F849 /* README.html */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -199,7 +203,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = B69BDCE908A2DDF2008AC9B5 /* Build configuration list for PBXProject "ClipboardViewer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -347,6 +351,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -427,6 +432,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
