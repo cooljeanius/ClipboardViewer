@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\title{}
+%  Translation from RTF performed by UnRTF, version 0.21.9 
+% font table contains 0 fonts total
+% invalid font number 0
+
+
+\begin{document}
+\maketitle
+
+{\bf {\LARGE Clipboard Viewer\par
+}}{\large \par
+}\normalsize{This small application shows the contents of any clipboard. \par
+A combo box lets you choose the clipboard to be examined \par
+(either from the built-in list, or by entering the name of an arbitrary clipboard); \par
+the list of types on the selected clipboard are displayed in a table view; \par
+and clicking on a type in the table view shows the data for that type in a text view. \par
+\par
+The app has six custom classes: \par
+\par
+}% invalid font number 1
+{\large PasteboardController% invalid font number 0
+\normalsize{\par
+The central controller object driving the UI and getting data from the clipboard. \par
+This class shows: \par
+- Interacting with the clipboard (getting types list; getting data for a given type; checking to see if pasteboard was changed between accesses). \par
+- Interacting with the simple UI of the app, including an% invalid font number 1
+\small{ NSComboBox% invalid font number 0
+\normalsize{. \par
+- Use of simple properties. \par
+- User interface validation. \par
+- Presenting errors. \par
+- Using% invalid font number 1
+\small{ NSSavePanel% invalid font number 0
+\normalsize{ as a sheet. \par
+\par
+% invalid font number 1
+{\large LazyDataTextStorage% invalid font number 0
+\normalsize{\par
+Subclass of% invalid font number 1
+\small{ NSTextStorage% invalid font number 0
+\normalsize{, used as the backing store for the% invalid font number 1
+\small{ NSTextView% invalid font number 0
+\normalsize{ which displays the contents. \par
+Upon loading the nib, the% invalid font number 1
+\small{ NSTextStorage% invalid font number 0
+\normalsize{ for this view is replaced with an instance of% invalid font number 1
+\small{ LazyDataTextStorage% invalid font number 0
+\normalsize{. \par
+}}}}}}}}}}}}}}}}% invalid font number 1
+\small{LazyDataTextStorage% invalid font number 0
+\normalsize{ uses a string and an attributes dictionary for its backing store: \par
+the string is retained,{\bf  not} copied, allowing the three lazily-evaluated% invalid font number 1
+\small{ NSString% invalid font number 0
+\normalsize{ subclasses (below) to actually behave lazily. \par
+Note that% invalid font number 1
+\small{ LazyDataTextStorage% invalid font number 0
+\normalsize{ is{\bf  not} editable, and thus it overrides the editing methods of% invalid font number 1
+\small{ NSTextStorage% invalid font number 0
+\normalsize{ to do nothing. \par
+\par
+}}}}}}}}% invalid font number 1
+{\large ASCIIString% invalid font number 0
+{\bf ,% invalid font number 1
+} HexString% invalid font number 0
+{\bf , and% invalid font number 1
+} HexAndASCIIString% invalid font number 0
+{\bf \normalsize{\par
+}}}Three% invalid font number 1
+\small{ NSString% invalid font number 0
+\normalsize{ subclasses for the three ways clipboard data is displayed in the application. \par
+These classes are ordered by complexity: \par
+}}% invalid font number 1
+\small{ASCIIString% invalid font number 0
+\normalsize{ is a very simple example of an% invalid font number 1
+\small{ NSString% invalid font number 0
+\normalsize{ subclass, as is% invalid font number 1
+\small{ HexString% invalid font number 0
+\normalsize{.\par
+Meanwhile,% invalid font number 1
+\small{ HexAndASCIIString% invalid font number 0
+\normalsize{ uses a more complicated implementation of its% invalid font number 1
+\small{ getCharacters:range:% invalid font number 0
+\normalsize{ method to interpret 10-byte sequences as lines and \par
+only process the lines that are needed. \par
+\par
+}}}}}}}}}}% invalid font number 1
+{\large PasteboardTypeTransformer% invalid font number 0
+\normalsize{\par
+A subclass of% invalid font number 1
+\small{ NSValueTransformer% invalid font number 0
+\normalsize{. \par
+This class converts pasteboard types based on four-character codes \par
+(like the old HFS type and creator codes) to be a bit more human-readable. \par
+It also interprets the four bytes as native characters and puts them at the \par
+beginning of the pasteboard type's string. \par
+Other pasteboard types are just passed through. \par
+Although the conversion looks sticky, this is a reasonably good example of \par
+creating one's own value transformer. \par
+\par
+\par
+}}}}\end{document}

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- Translation from RTF performed by UnRTF, version 0.21.9 -->
+<!--font table contains 0 fonts total-->
+<!--invalid font number 0-->
+</head>
+<body><b><font size="6"><font color="#000000">Clipboard Viewer<br>
+</font></font></b><font size="4"><font color="#000000"><br>
+</font></font><font size="3"><font color="#000000">This small application shows the contents of any clipboard. <br>
+A combo box lets you choose the clipboard to be examined <br>
+(either from the built-in list, or by entering the name of an arbitrary clipboard); <br>
+the list of types on the selected clipboard are displayed in a table view; <br>
+and clicking on a type in the table view shows the data for that type in a text view. <br>
+<br>
+The app has six custom classes: <br>
+<br>
+</font></font><!--invalid font number 1-->
+<font size="4"><font color="#000000">PasteboardController<!--invalid font number 0-->
+<font size="3"><br>
+The central controller object driving the UI and getting data from the clipboard. <br>
+This class shows: <br>
+- Interacting with the clipboard (getting types list; getting data for a given type; checking to see if pasteboard was changed between accesses). <br>
+- Interacting with the simple UI of the app, including an<!--invalid font number 1-->
+<font size="2"> NSComboBox<!--invalid font number 0-->
+<font size="3">. <br>
+- Use of simple properties. <br>
+- User interface validation. <br>
+- Presenting errors. <br>
+- Using<!--invalid font number 1-->
+<font size="2"> NSSavePanel<!--invalid font number 0-->
+<font size="3"> as a sheet. <br>
+<br>
+<!--invalid font number 1-->
+<font size="4">LazyDataTextStorage<!--invalid font number 0-->
+<font size="3"><br>
+Subclass of<!--invalid font number 1-->
+<font size="2"> NSTextStorage<!--invalid font number 0-->
+<font size="3">, used as the backing store for the<!--invalid font number 1-->
+<font size="2"> NSTextView<!--invalid font number 0-->
+<font size="3"> which displays the contents. <br>
+Upon loading the nib, the<!--invalid font number 1-->
+<font size="2"> NSTextStorage<!--invalid font number 0-->
+<font size="3"> for this view is replaced with an instance of<!--invalid font number 1-->
+<font size="2"> LazyDataTextStorage<!--invalid font number 0-->
+<font size="3">. <br>
+</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><!--invalid font number 1-->
+<font size="2"><font color="#000000">LazyDataTextStorage<!--invalid font number 0-->
+<font size="3"> uses a string and an attributes dictionary for its backing store: <br>
+the string is retained,<b> not</b> copied, allowing the three lazily-evaluated<!--invalid font number 1-->
+<font size="2"> NSString<!--invalid font number 0-->
+<font size="3"> subclasses (below) to actually behave lazily. <br>
+Note that<!--invalid font number 1-->
+<font size="2"> LazyDataTextStorage<!--invalid font number 0-->
+<font size="3"> is<b> not</b> editable, and thus it overrides the editing methods of<!--invalid font number 1-->
+<font size="2"> NSTextStorage<!--invalid font number 0-->
+<font size="3"> to do nothing. <br>
+<br>
+</font></font></font></font></font></font></font></font></font><!--invalid font number 1-->
+<font size="4"><font color="#000000">ASCIIString<!--invalid font number 0-->
+<b>,<!--invalid font number 1-->
+</b> HexString<!--invalid font number 0-->
+<b>, and<!--invalid font number 1-->
+</b> HexAndASCIIString<!--invalid font number 0-->
+<b><font size="3"><br>
+</font></b></font></font><font color="#000000">Three<!--invalid font number 1-->
+<font size="2"> NSString<!--invalid font number 0-->
+<font size="3"> subclasses for the three ways clipboard data is displayed in the application. <br>
+These classes are ordered by complexity: <br>
+</font></font></font><!--invalid font number 1-->
+<font size="2"><font color="#000000">ASCIIString<!--invalid font number 0-->
+<font size="3"> is a very simple example of an<!--invalid font number 1-->
+<font size="2"> NSString<!--invalid font number 0-->
+<font size="3"> subclass, as is<!--invalid font number 1-->
+<font size="2"> HexString<!--invalid font number 0-->
+<font size="3">.<br>
+Meanwhile,<!--invalid font number 1-->
+<font size="2"> HexAndASCIIString<!--invalid font number 0-->
+<font size="3"> uses a more complicated implementation of its<!--invalid font number 1-->
+<font size="2"> getCharacters:range:<!--invalid font number 0-->
+<font size="3"> method to interpret 10-byte sequences as lines and <br>
+only process the lines that are needed. <br>
+<br>
+</font></font></font></font></font></font></font></font></font></font></font><!--invalid font number 1-->
+<font size="4"><font color="#000000">PasteboardTypeTransformer<!--invalid font number 0-->
+<font size="3"><br>
+A subclass of<!--invalid font number 1-->
+<font size="2"> NSValueTransformer<!--invalid font number 0-->
+<font size="3">. <br>
+This class converts pasteboard types based on four-character codes <br>
+(like the old HFS type and creator codes) to be a bit more human-readable. <br>
+It also interprets the four bytes as native characters and puts them at the <br>
+beginning of the pasteboard type's string. <br>
+Other pasteboard types are just passed through. <br>
+Although the conversion looks sticky, this is a reasonably good example of <br>
+creating one's own value transformer. <br>
+<br>
+<br>
+</font></font></font></font></font></body>
+</html>
