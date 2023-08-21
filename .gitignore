@@ -18,3 +18,4 @@ build/*
 *(Autosaved)*
 *.xcworkspace
 *.xcodeproj/xcuserdata/*
+.env.local
