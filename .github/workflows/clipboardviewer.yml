@@ -1,21 +1,24 @@
+---
 name: cooljeanius/ClipboardViewer
 on:
   push:
     branches:
-    - "**/*"
+      - "**/*"
   pull_request:
 jobs:
   test:
-    runs-on: macos-11.0
+    runs-on: macos-12.0
     steps:
-    - name: checkout
-      uses: actions/checkout@v4.1.7
-#     # 'Transformers::TravisCI::Scripts::Dependencies' dependencies are currently unsupported
-#     # 'compiler' was not transformed because there is no suitable equivalent in GitHub Actions
-    - run: echo "Not everyone uses CocoaPods"
-    - run: xcodebuild
+      - name: checkout
+        uses: actions/checkout@v4.1.7
+        # 'Transformers::TravisCI::Scripts::Dependencies' dependencies are
+        # currently unsupported
+        # 'compiler' was not transformed because there is no suitable equivalent
+        # in GitHub Actions
+      - run: echo "Not everyone uses CocoaPods"
+      - run: xcodebuild CC="${{matrix.compiler}}" OBJC="${{matrix.compiler}}"
     strategy:
       matrix:
         compiler:
-        - clang
-        - gcc
+          - clang
+          - gcc
