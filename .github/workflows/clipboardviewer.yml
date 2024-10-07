@@ -10,7 +10,7 @@ jobs:
     runs-on: macos-12
     steps:
       - name: checkout
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
         # 'Transformers::TravisCI::Scripts::Dependencies' dependencies are
         # currently unsupported
         # 'compiler' was not transformed because there is no suitable equivalent
